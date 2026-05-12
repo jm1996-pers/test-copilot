@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <div>
+                <h1>Task Manager</h1>
+                <p class="app-description">Add, complete, and remove tasks with keyboard-friendly controls.</p>
+            </div>
+            <button id="themeToggle" type="button" class="secondary-btn theme-toggle" aria-pressed="false">Dark mode</button>
+        </header>
+
+        <main>
+            <section class="task-panel" aria-labelledby="task-panel-title">
+                <div class="task-panel__head">
+                    <div>
+                        <h2 id="task-panel-title">Your tasks</h2>
+                        <p id="task-count" class="task-count" aria-live="polite">No tasks yet</p>
+                    </div>
+                </div>
+
+                <form id="taskForm" class="task-form" aria-label="Add a new task">
+                    <label for="taskInput" class="visually-hidden">Task description</label>
+                    <input type="text" id="taskInput" name="task" placeholder="Enter a new task" autocomplete="off" required>
+                    <button type="submit" class="primary-btn">Add Task</button>
+                </form>
+
+                <p id="taskError" class="task-error" aria-live="assertive"></p>
+                <p id="taskHelp" class="task-help">Press Enter or click Add Task to create a new task.</p>
+
+                <div class="task-filters" role="group" aria-label="Filter tasks">
+                    <button type="button" class="filter-btn active" data-filter="all">All</button>
+                    <button type="button" class="filter-btn" data-filter="pending">Pending</button>
+                    <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <ul id="taskList" class="task-list" aria-live="polite"></ul>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            Built with semantic HTML, responsive styles, and accessible interactions.
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
